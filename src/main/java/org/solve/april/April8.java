@@ -1,5 +1,8 @@
 package org.solve.april;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class April8 {
 
     public static void main(String[] args) {
@@ -32,15 +35,26 @@ public class April8 {
 
 
     public static int climbStairs(int n) {
-        if (n == 1 || n == 2) return n;
-        return fib( n - 1) + fib(n - 2);
+
+        if (n == 1 || n == 2 || n == 3)
+            return n;
+
+        Map<Integer, Integer> ks = new HashMap<>();
+
+        for (int i = 1; i < n; i++) {
+            if (i == 1 || i == 2 || i == 3)
+                ks.put(i, i);
+            else {
+                Integer item1 = ks.get(i - 1);
+                Integer item2 = ks.get(i - 2);
+                ks.put(i, item1 + item2);
+            }
+        }
+
+        return ks.get(n - 1) + ks.get(n - 2);
     }
 
-    private static int fib(int n) {
-        if (n == 1 || n == 2)
-            return n;
-        return fib(n - 1) + fib(n - 2);
-    }
+
 }
 
 
