@@ -3,7 +3,7 @@ package org.solve.april;
 import java.util.HashMap;
 import java.util.Map;
 
-public class April8 {
+public class April8_9 {
 
     public static void main(String[] args) {
         System.out.println("climbStairs(3) = " + climbStairs(3));
