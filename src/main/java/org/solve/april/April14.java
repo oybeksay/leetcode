@@ -5,7 +5,6 @@ public class April14 {
     public static void main(String[] args) {
         System.out.println("isPowerOfTwo(10) = " + isPowerOfTwo(10));
         System.out.println("isPowerOfTwo(8) = " + isPowerOfTwo(8));
-
     }
 
 
